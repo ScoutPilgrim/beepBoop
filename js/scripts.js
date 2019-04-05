@@ -105,5 +105,7 @@ $(document).ready(function(){
     inputArr = generateArr(myNum);
     answerArr = arrLogic(inputArr);
     console.log(answerArr);
+    $('.isHide').show();
+    $('#myAns').find('p').text(answerArr);
   });
 });

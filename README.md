@@ -23,8 +23,8 @@ Included Specifications:
 * Once number is found, generate an Array of numbers from 0 up to and including the number entered.
 * Looks if any of the numbers within the array are either 1, 2, or 3
 * If a number is found that contains 1, 2, or 3, a priority is set. The priority looks like this ( 3 > 2 > 1). So, if we come across the number 31, which contains both a '3' and a '1', we would set the priority to 3, since it is greater than 1.
-* Once we find our priority, we then change the value of our array element in which 1, 2, or 3 was found based on the priority we have. 
-
+* Once we find our priority, we then change the value of our array element in which 1, 2, or 3 was found based on the priority we have.
+* Once our edited array is complete, display it to the user.
 
 #### The MIT License
 
