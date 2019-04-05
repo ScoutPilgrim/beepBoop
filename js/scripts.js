@@ -1,6 +1,7 @@
 let answerArr = [];
 let inputArr = [];
 const regExChar = /[^0-9]/g;
+const caseRegEx =/[123]/g
 
 function clearArrays(){
   console.log('Wiping out our Arrays for new user input and feedback');
@@ -33,7 +34,59 @@ function printArr(myArr){
 
 function arrLogic(myArr){
   console.log('Editing elements of our Array based on values');
-  console.log(myArr[0][0]);
+  var charPriority;
+  var myCase;
+  for(var i = 0; i < myArr.length; i++){
+    var caseFound = false;
+    var caseCompared = false;
+    myCase = 0;
+    for(var j = 0; j < myArr[i].length; j++){
+      if(!!myArr[i][j].match(caseRegEx)){
+        caseFound = true;
+      }
+      if(caseFound === true){
+        myCase = casePrio(myCase, myArr[i][j]);
+        caseFound = false;
+        caseCompared = true;
+      }
+    }
+    if(caseCompared === true){
+      answerArr.push(whichCase(myCase));
+      continue;
+    }else{
+      answerArr.push(myArr[i]);
+    }
+  }
+  return answerArr;
+};
+
+function whichCase(myChar){
+  console.log('Which case is being called for the char ' + myChar);
+  switch (myChar) {
+    case '1':
+      return 'Beep!';
+      break;
+    case '2':
+      return 'Boop!';
+      break;
+    case '3':
+      return "I'm sorry, Dave. I'm afraid I can't do that.";
+      break;
+
+  }
+};
+
+function casePrio(myChar, myNewChar){
+  console.log('Calling casePrio to determine which spec to call. Current Spec: ' +myChar+ '. New Spec: ' +myNewChar);
+  var myInt = parseInt(myChar);
+  var myNewInt = parseInt(myNewChar);
+  if(myInt < myNewInt){
+    console.log('Updating priority to case '+myNewChar);
+    return myNewChar;
+  }else{
+    console.log('Case remains as ' +myChar);
+    return myChar;
+  }
 };
 
 $(document).ready(function(){
@@ -51,5 +104,6 @@ $(document).ready(function(){
     console.log('Your entered number is '+ myNum);
     inputArr = generateArr(myNum);
     answerArr = arrLogic(inputArr);
+    console.log(answerArr);
   });
 });
