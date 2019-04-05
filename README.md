@@ -3,7 +3,7 @@
 
 ### How to see site
 
-[The site can be found here]()
+[The site can be found here](https://scoutpilgrim.github.io/beepBoop/)
 
 ### Description:
 
