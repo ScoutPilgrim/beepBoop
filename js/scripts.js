@@ -12,14 +12,14 @@ function generateArr(maxNum){
     console.log('Generating inputArr based on user input');
     var tempArr = [];
     for(var i = 0; i <= maxNum; i++){
-      tempArr.push(i);
+      tempArr.push(i.toString());
     }
     printArr(tempArr);
     return tempArr;
 };
 
 function printArr(myArr){
-  console.log('Printing out our Arr to console')
+  console.log('Printing out our Arr to console');
   var arrStr = '[';
   for(var i = 0; i < myArr.length; i++){
     arrStr += myArr[i];
@@ -29,6 +29,11 @@ function printArr(myArr){
   }
   arrStr += ']';
   console.log(arrStr);
+};
+
+function arrLogic(myArr){
+  console.log('Editing elements of our Array based on values');
+  console.log(myArr[0][0]);
 };
 
 $(document).ready(function(){
